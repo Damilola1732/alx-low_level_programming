@@ -1,10 +1,10 @@
 #include <stdio.h>
 
 /**
-* main - print to the standard output 'Programming is multilingual puzzle'
+* main - print a test
 *
-* Use Puts
-* Return: retrn 0 */
+* Return: retrn 0 (Success)
+*/
 
 
 
