@@ -1,11 +1,12 @@
 #include <stdio.h>
-/** 
-* main - print to std output "with proper grammar, but the outcome 
-* is a piece of art" 
-* 
-* Use printf 
-* Return: Return 0 (Without warning) 
-*/ int main(void) {
-	printf("with proper grammar, but the outcome is a piece of art,\n");
+
+/**
+* main - print a test
+*
+* Return: Always 0(Success)
+*/
+int main(void) 
+{
+	puts("\"Programming is like buildinga multilingual puzzle");
  return (0);
 }
