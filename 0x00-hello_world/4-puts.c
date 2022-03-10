@@ -1,12 +1,10 @@
 #include <stdio.h>
 
 /**
-* main - print a test
+* main - Print a test
 *
-* Return: retrn 0 (Success)
+* Return: Always 0 (Success)
 */
-
-
 
 int main(void)
 {
