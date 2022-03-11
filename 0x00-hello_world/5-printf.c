@@ -1,12 +1,11 @@
 #include <stdio.h>
-
 /**
-* main - print a test
-*
-* Return: Always 0(Success)
+*main - Entry point
+*My hello, printf task
+*Return: return 1 after program execution
 */
-int main(void) 
+int main(void)
 {
-	puts("\"Programming is like buildinga multilingual puzzle");
- return (0);
+printf("with proper grammar, but the outcome is a piece of art, \n");
+return (0);
 }
