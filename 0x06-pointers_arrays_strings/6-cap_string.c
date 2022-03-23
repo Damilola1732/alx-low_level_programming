@@ -1,35 +1,58 @@
-#include "holberton.h"
-
+#include "main.h
 /**
-*cap_string -function that capitalizes all words in a string
-*
-*@s: character to be checked
-*Return: changed string
-*/
+ * separators - checks and ensure that all string is capitalized
+ * @c: character to be checked
+ * Return: if separator return 1. Otherwise return 0;
+ */
+int separator(char c)
+{
+switch (c)
+{
+case ' ':
+case '\t':
+case '\n':
+case ',':
+case ';':
+case '.':
+case '!':
+case '?':
+case '"':
+case '(':
+case ')':
+case '{':
+case '}':
+return (1);
+
+default:
+return (0);
+}
 
 
-
+}
+/**
+ * cap_string - capitalizes all words of a string
+ * @s: string to uppercase
+ * Return: returns the modified string
+ */
 char *cap_string(char *s)
 {
-int i;
+int count, upper;
 
-i = 0;
+upper = -32;
 
-while (*(s + i) != '\0')
+count = 0;
+
+while (s[count] != '\0')
 {
-if (*(s + 0) >= 'a' && *(s + 0) <= 'z')
+if (s[count] >= 'a' && s[count] <= 'z')
 {
-*(s + 0) = *(s + 0) - 32;
+
+
+if (s[count] == *s || separator(s[count - 1]))
+
+s[count] += upper;
 }
-if (s[i] == ' ' || s[i] == '\t' || s[i] == '\n' ||
-s[i] == ',' || s[i] == ';' || s[i] == '.' ||
-s[i] == '!' || s[i] == '?' || s[i] == '\"' ||
-s[i] == '(' || s[i] == ')' || s[i] == '{' || s[i] == '}')
-{
-if (*(s + i + 1) >= 'a' && *(s + i + 1) <= 'z')
-*(s + i + 1) = *(s + i + 1) - 32;
-}
-i++;
+count++;
 }
 return (s);
 }
