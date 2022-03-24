@@ -1,58 +1,36 @@
-#include "main.h
+#include "holberton.h"
+
 /**
- * separators - checks and ensure that all string is capitalized
- * @c: character to be checked
- * Return: if separator return 1. Otherwise return 0;
+ * cap_string - function that capitalizes all words of a string.
+ * @s: Pointer to Char
+ * Return: char.
  */
-int separator(char c)
-{
-switch (c)
-{
-case ' ':
-case '\t':
-case '\n':
-case ',':
-case ';':
-case '.':
-case '!':
-case '?':
-case '"':
-case '(':
-case ')':
-case '{':
-case '}':
-return (1);
 
-default:
-return (0);
-}
-
-
-}
-/**
- * cap_string - capitalizes all words of a string
- * @s: string to uppercase
- * Return: returns the modified string
- */
 char *cap_string(char *s)
 {
-int count, upper;
+	int i = 0;
 
-upper = -32;
-
-count = 0;
-
-while (s[count] != '\0')
-{
-if (s[count] >= 'a' && s[count] <= 'z')
-{
-
-
-if (s[count] == *s || separator(s[count - 1]))
-
-s[count] += upper;
-}
-count++;
-}
-return (s);
+	while (*(s + i) != '\0')
+	{
+		if (i == 0 && (*(s + i) >= 97 && *(s + i) <= 122))
+		{
+			*(s + i) = *(s + i) - ' ';
+			i++;
+		}
+		if (*(s + i) == ' ' || *(s + i) == '\n' || *(s + i) == '\t'
+		    || *(s + i) == ',' || *(s + i) == ';' || *(s + i) == '!'
+		    || *(s + i) == '?' || *(s + i) == '"' || *(s + i) == '('
+		    || *(s + i) == ')' || *(s + i) == '{' || *(s + i) == '}'
+		    || *(s + i) == '.')
+		{
+			i++;
+			if (*(s + i) >= 97 && *(s + i) <= 122)
+			{
+				*(s + i) = *(s + i) - ' ';
+			}
+		}
+		else
+			i++;
+	}
+	return (s);
 }
