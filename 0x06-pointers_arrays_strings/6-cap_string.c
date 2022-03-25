@@ -1,31 +1,29 @@
 #include "main.h"
 /**
- * cap_string - capitalizes all words of a string
+ * rot13 - encodes a string using rot13
  * @s: input string.
  * Return: the pointer to dest.
  */
 
-
-char *cap_string(char *s)
+char *rot13(char *s)
 {
 int count = 0, i;
-int separators[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
+char alphabet[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+char rot13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
-if (*(s + count) >= 97 && *(s + count) <= 122)
-*(s + count) = *(s + count) - 32;
-count++;
 while (*(s + count) != '\0')
 {
-for (i = 0; i < 13; i++)
+
+for (i = 0; i < 52; i++)
 {
-if (*(s + count) == separators[i])
+if (*(s + count) == alphabet[i])
 {
-if ((*(s + (count + 1)) >= 97) && (*(s + (count + 1)) <= 122))
-*(s + (count + 1)) = *(s + (count + 1)) - 32;
+*(s + count) = rot13[i];
 break;
 }
 }
 count++;
 }
+
 return (s);
 }
