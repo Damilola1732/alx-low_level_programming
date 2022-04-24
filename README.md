@@ -1,2 +1,4 @@
 This is a repo for my first C program
-It is more interesting than I thought
+It is more interesting than I thought though
+yess
+
